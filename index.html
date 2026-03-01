@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>IELTS Practice Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>IELTS Practice Platform</h1>
+    <p>Prepare Smarter. Score Higher.</p>
+</header>
+
+<nav>
+    <button onclick="showSection('speaking')">Speaking</button>
+    <button onclick="showSection('writing')">Writing</button>
+</nav>
+
+<section id="speaking" class="content">
+    <h2>Speaking Practice</h2>
+    <p id="speakingQuestion">Click below to get a question.</p>
+    <button onclick="generateSpeaking()">Get Question</button>
+</section>
+
+<section id="writing" class="content" style="display:none;">
+    <h2>Writing Task</h2>
+    <p id="writingQuestion">Click below to get a task.</p>
+    <button onclick="generateWriting()">Get Task</button>
+</section>
+
+<script src="script.js"></script>
+
+</body>
+</html>
