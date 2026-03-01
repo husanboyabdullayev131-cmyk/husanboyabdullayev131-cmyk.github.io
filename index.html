@@ -1,35 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>IELTS Practice Website</title>
+    <title>IELTS with Husanboy</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<header>
-    <h1>IELTS Practice Platform</h1>
-    <p>Prepare Smarter. Score Higher.</p>
-</header>
-
 <nav>
-    <button onclick="showSection('speaking')">Speaking</button>
-    <button onclick="showSection('writing')">Writing</button>
+    <h2>IELTS with Husanboy</h2>
+    <div>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="speaking.html">Speaking</a>
+        <a href="writing.html">Writing</a>
+        <a href="contact.html">Contact</a>
+    </div>
 </nav>
 
-<section id="speaking" class="content">
-    <h2>Speaking Practice</h2>
-    <p id="speakingQuestion">Click below to get a question.</p>
-    <button onclick="generateSpeaking()">Get Question</button>
+<section class="hero">
+    <h1>Master IELTS with Confidence</h1>
+    <p>Practice. Improve. Achieve Your Target Band.</p>
+    <a href="speaking.html" class="btn">Start Practicing</a>
 </section>
-
-<section id="writing" class="content" style="display:none;">
-    <h2>Writing Task</h2>
-    <p id="writingQuestion">Click below to get a task.</p>
-    <button onclick="generateWriting()">Get Task</button>
-</section>
-
-<script src="script.js"></script>
 
 </body>
 </html>
