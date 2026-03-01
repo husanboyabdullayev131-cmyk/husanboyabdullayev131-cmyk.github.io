@@ -1,28 +1,53 @@
-const speakingQuestions = [
-    "Describe your hometown.",
-    "Do you prefer studying alone or with friends?",
-    "What kind of books do you enjoy reading?",
-    "How do people in your country celebrate special occasions?"
-];
-
-const writingTasks = [
-    "Some people believe that technology makes life easier. Discuss both views and give your opinion.",
-    "The chart shows changes in population between 2000 and 2020. Summarize the information.",
-    "Many students work while studying. What are the advantages and disadvantages?"
-];
-
-function showSection(section) {
-    document.getElementById("speaking").style.display = "none";
-    document.getElementById("writing").style.display = "none";
-    document.getElementById(section).style.display = "block";
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f6f9;
 }
 
-function generateSpeaking() {
-    const random = Math.floor(Math.random() * speakingQuestions.length);
-    document.getElementById("speakingQuestion").innerText = speakingQuestions[random];
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background: #1f2937;
+    color: white;
 }
 
-function generateWriting() {
-    const random = Math.floor(Math.random() * writingTasks.length);
-    document.getElementById("writingQuestion").innerText = writingTasks[random];
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+nav a:hover {
+    color: #38bdf8;
+}
+
+.hero {
+    text-align: center;
+    padding: 120px 20px;
+    background: linear-gradient(135deg, #2563eb, #06b6d4);
+    color: white;
+}
+
+.hero h1 {
+    font-size: 48px;
+}
+
+.hero p {
+    font-size: 20px;
+    margin: 20px 0;
+}
+
+.btn {
+    padding: 12px 25px;
+    background: white;
+    color: #2563eb;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background: #e5e7eb;
 }
