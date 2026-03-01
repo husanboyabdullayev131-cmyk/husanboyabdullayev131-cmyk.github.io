@@ -1,53 +1,102 @@
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f4f6f9;
+// Speaking Questions
+const part1Questions = [
+    "Do you enjoy reading?",
+    "What do you usually do on weekends?",
+    "Do you prefer studying alone or with friends?"
+];
+
+const part2Topics = [
+    "Describe a book you recently read.",
+    "Describe a teacher who influenced you.",
+    "Describe a goal you want to achieve."
+];
+
+function generatePart1() {
+    const random = Math.floor(Math.random() * part1Questions.length);
+    document.getElementById("part1Question").innerText = part1Questions[random];
 }
 
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 50px;
-    background: #1f2937;
-    color: white;
+function generatePart2() {
+    const random = Math.floor(Math.random() * part2Topics.length);
+    document.getElementById("part2Question").innerText = part2Topics[random];
 }
 
-nav a {
-    color: white;
-    text-decoration: none;
-    margin-left: 20px;
+// Timer
+let countdown;
+
+function startPrep() {
+    startTimer(60);
 }
 
-nav a:hover {
-    color: #38bdf8;
+function startSpeaking() {
+    startTimer(120);
 }
 
-.hero {
-    text-align: center;
-    padding: 120px 20px;
-    background: linear-gradient(135deg, #2563eb, #06b6d4);
-    color: white;
+function startTimer(seconds) {
+    clearInterval(countdown);
+    let time = seconds;
+
+    countdown = setInterval(() => {
+        let minutes = Math.floor(time / 60);
+        let secs = time % 60;
+
+        document.getElementById("timer").innerText =
+            `${minutes.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+
+        time--;
+
+        if (time < 0) {
+            clearInterval(countdown);
+            alert("Time is up!");
+        }
+    }, 1000);
 }
 
-.hero h1 {
-    font-size: 48px;
+// Writing Word Counter
+function countWords() {
+    const text = document.getElementById("essay").value.trim();
+    const words = text === "" ? 0 : text.split(/\s+/).length;
+    document.getElementById("wordCount").innerText = words;
 }
 
-.hero p {
-    font-size: 20px;
-    margin: 20px 0;
+let timeLeft = 3600; // 60 minutes
+let timer;
+
+if (document.getElementById("timer")) {
+    timer = setInterval(function () {
+
+        let minutes = Math.floor(timeLeft / 60);
+        let seconds = timeLeft % 60;
+
+        if (seconds < 10) seconds = "0" + seconds;
+
+        document.getElementById("timer").innerText =
+            "Time Left: " + minutes + ":" + seconds;
+
+        timeLeft--;
+
+        if (timeLeft < 0) {
+            clearInterval(timer);
+            alert("Time is up!");
+            submitTest();
+        }
+
+    }, 1000);
 }
 
-.btn {
-    padding: 12px 25px;
-    background: white;
-    color: #2563eb;
-    text-decoration: none;
-    border-radius: 6px;
-    font-weight: bold;
-}
+function submitTest() {
 
-.btn:hover {
-    background: #e5e7eb;
+    let score = 0;
+
+    // Correct answers
+    if (document.getElementById("q1").value.toLowerCase() === "innovation") {
+        score++;
+    }
+
+    if (document.getElementById("q2").value === "True") {
+        score++;
+    }
+
+    alert("Your score: " + score + "/2");
+
 }

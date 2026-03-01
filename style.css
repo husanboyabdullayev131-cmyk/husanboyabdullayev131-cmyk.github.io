@@ -1,37 +1,165 @@
-body {
-    font-family: Arial, sans-serif;
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    min-height: 100vh;
     background: linear-gradient(135deg, #4e73df, #1cc88a);
+    display: flex;
+    flex-direction: column;
+    color: #333;
+}
+
+/* Header */
+header {
+    padding: 25px;
     text-align: center;
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+/* Navigation Bar */
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    padding: 15px;
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+nav a:hover {
+    color: #f8f9fc;
+    transform: scale(1.1);
+}
+
+/* Main Content */
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    text-align: center;
+}
+
+/* Section Title */
+main h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
     color: white;
 }
 
-header {
-    padding: 30px;
+/* Button Container */
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 25px;
+    width: 80%;
+    max-width: 700px;
 }
 
-nav {
-    margin: 20px;
-}
-
+/* Modern Card Buttons */
 button {
-    padding: 10px 20px;
-    margin: 10px;
+    padding: 18px;
+    font-size: 18px;
+    font-weight: bold;
     border: none;
-    border-radius: 8px;
+    border-radius: 15px;
     cursor: pointer;
-    font-size: 16px;
+    background: white;
+    color: #4e73df;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
 button:hover {
-    opacity: 0.8;
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+    background: #4e73df;
+    color: white;
 }
 
-.content {
+/* Footer */
+footer {
+    text-align: center;
+    padding: 15px;
+    color: white;
+    font-size: 14px;
+}
+
+.skill-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    width: 85%;
+    max-width: 1000px;
+}
+
+.card {
     background: white;
-    color: black;
-    width: 60%;
-    margin: 20px auto;
-    padding: 20px;
-    border-radius: 10px;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.4s ease;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.card h3 {
+    margin-top: 15px;
+    color: #4e73df;
+}
+
+.card p {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.25);
+    background: #4e73df;
+    color: white;
+}
+
+.test-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    width: 90%;
+    margin: auto;
+    padding: 100px;
+}
+
+.passage {
+    background: white;
+    padding: 80px;
+    border-radius: 15px;
+    height: 800px;
+    overflow-y: scroll;
+}
+
+.questions {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+}
+
+#timer {
+    font-size: 18px;
+    color: white;
+    margin-top: 10px;
 }

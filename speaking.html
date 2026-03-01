@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Speaking Practice</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+    <h2>IELTS with Husanboy</h2>
+    <div>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="speaking.html">Speaking</a>
+        <a href="writing.html">Writing</a>
+        <a href="contact.html">Contact</a>
+    </div>
+</nav>
+
+<section class="container">
+    <h1>IELTS Speaking Practice</h1>
+
+    <h2>Part 1</h2>
+    <p id="part1Question">Click to generate question</p>
+    <button onclick="generatePart1()">Generate Part 1</button>
+
+    <hr>
+
+    <h2>Part 2</h2>
+    <p id="part2Question">Click to generate topic</p>
+    <button onclick="generatePart2()">Generate Part 2</button>
+
+    <hr>
+
+    <h2>Timer</h2>
+    <p id="timer">00:00</p>
+    <button onclick="startPrep()">1-Min Prep</button>
+    <button onclick="startSpeaking()">2-Min Speaking</button>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
